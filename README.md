@@ -9,7 +9,7 @@ A basic boilerplate for node projects
 -   Typescript
 -   Rollup
 -   Jest
--   TSlint
+-   ESlint
 -   Prettier
 
 # About
