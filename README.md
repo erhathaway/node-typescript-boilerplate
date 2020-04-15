@@ -4,7 +4,7 @@
 
 ![](https://api.dependabot.com/badges/status?host=github&repo=erhathaway/node-typescript-boilerplate)
 
-Just a basic boilerplate for node projects
+A basic boilerplate for node projects
 
 -   Typescript
 -   Rollup
@@ -37,4 +37,33 @@ Just a basic boilerplate for node projects
 3. Edit the Continuous Integration badge in the `README.md`. [See the github docs on action badges](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/configuring-a-workflow#adding-a-workflow-status-badge-to-your-repository)
 4. Edit (or delete) the Dependabot badge in the `README.md`. Use `<username>/<reponame>` syntax
 5. Install the dependencies `npm install` or `yarn install`
-6. Run the example app `npm run start`
+6. Run a dev build of `src/index.ts` code with `npm run dev`
+7. Build the code `npm run build`
+
+# Building
+
+This template supports building a distributable, a binary, and static js files from typescript files.
+
+Building is done with `rollup`. You can edit
+
+## Binaries
+
+Binaries are built from the code that lives in `src/bin.ts`.
+
+> Note: you might want to change the line in package.json
+
+`"node-typescript-boilerplate": "./dist/bin.js"`
+
+to:
+
+`"[NAME OF SCRIPT]": "./dist/bin.js"`
+
+## Distributable
+
+The distributable is built from `src/index.ts`
+
+If you are trying to publish a package for use by another codebase, you'll want to use this.
+
+## Static
+
+Sometimes you want to just transpile TS to JS. Files in here will appear in `dist/static`.
