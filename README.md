@@ -44,11 +44,11 @@ A basic boilerplate for node projects
 
 This template supports building a distributable, a binary, and static js files from typescript files.
 
-Building is done with `rollup`. You can edit
+Building is done with `rollup`.
 
 ## Binaries
 
-Binaries are built from the code that lives in `src/bin.ts`.
+Binaries are built from the code that lives in `src/bin.ts`. If you don't want binaries you can delete the `src/bin.ts` file and the entry in `rollup.config.js`
 
 > Note: you might want to change the line in package.json
 
@@ -60,10 +60,10 @@ to:
 
 ## Distributable
 
-The distributable is built from `src/index.ts`
+The distributable is built from `src/index.ts`. If you don't want a distributable you can delete the `src/index.ts` file and the entry in `rollup.config.js`
 
 If you are trying to publish a package for use by another codebase, you'll want to use this.
 
 ## Static
 
-Sometimes you want to just transpile TS to JS. Files in here will appear in `dist/static`.
+Sometimes you want to just transpile TS to JS. Files in `src/static` here will appear in `dist/static`. If you don't want static file transpilation that aren't binaries or distributables you can delete the files in `src/static/` file and the entry in `rollup.config.js`
