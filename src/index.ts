@@ -1,1 +1,1 @@
-console.log('Hello world!');
+export const helloMsg = console.log('Hello world!');

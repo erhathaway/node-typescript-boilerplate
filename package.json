@@ -2,15 +2,20 @@
     "name": "node-typescript-boilerplate",
     "version": "0.1.0",
     "description": "",
-    "main": "dist/index.js",
+    "main": "dist/index.cjs.js",
+    "module": "dist/index.es.js",
     "types": "dist/index.d.ts",
+    "bin": {
+        "node-typescript-boilerplate": "./dist/bin.js"
+    },
+    "files": [
+        "dist"
+    ],
     "scripts": {
         "dev": "nodemon -e ts -w ./src -x npm run ts-node:start",
         "ts-node:start": "node ./node_modules/.bin/ts-node --project tsconfig.json src/index.ts",
         "clean": "rimraf coverage build tmp",
-        "build": "tsc -p tsconfig.json",
-        "build:watch": "tsc -w -p tsconfig.json",
-        "format": "./node_modules/.bin/prettier \"src/**/*\" --write",
+        "build": "npm run clean && rollup -c",
         "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
         "prettier:fix": "prettier \"src/**/*\" --write",
         "prettier:check": "prettier \"src/**/*\" --check",
@@ -50,6 +55,12 @@
         "nodemon": "^2.0.2",
         "prettier": "^1.19.1",
         "rimraf": "^3.0.2",
+        "rollup": "^2.6.1",
+        "rollup-plugin-eslint": "^7.0.0",
+        "rollup-plugin-executable": "^1.5.3",
+        "rollup-plugin-hashbang": "^2.2.2",
+        "rollup-plugin-multi-input": "^1.1.1",
+        "rollup-plugin-typescript2": "^0.27.0",
         "ts-jest": "^25.2.1",
         "ts-morph": "^1.3.5",
         "ts-node": "^8.6.2",
